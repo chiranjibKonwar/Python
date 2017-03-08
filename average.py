@@ -1,12 +1,17 @@
 import string
 fileName = raw_input("What file name: ")
+#KMK learn how to pass command line  arguments to a python script so that you can you the file name as an argument
 lines = []
 try:
-    file = open(fileName)     #is 'file' a varible?
+    file = open(fileName, 'r')     #is 'file' a varible?
+#   KMK 'r' is for readonly mode   look up open permissions
     lines = file.readlines()
     file.close()
 except:              # is try except like if-else?
     print "Unable to open file"
+
+#KMK lear how to create a function
+
 sum = 0
 values = 0
 if(len(lines) > 0):
