@@ -31,8 +31,8 @@ def averageTotal():
             		sum = sum + value
             		values += 1
     	print "Average = %f for %d lines, sum = %f" %(sum/values,values,sum)
-				else:
-    				print "No lines in the file"
+	#else : 
+    	#print "No lines in the file"
 
 averageTotal()
 averageTotal()
