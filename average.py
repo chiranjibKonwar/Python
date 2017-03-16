@@ -1,7 +1,7 @@
 import sys
 from mystats import average
 from myutils import readnumbers
-from sd import standardDeviation
+from std import standardDeviation
 
 fileName = sys.argv[1]
 
