@@ -16,11 +16,12 @@ def number():
 		print numbers
 		print "Total count of numbers: %d" %(len(numbers))
 		if(len(numbers)%2==0):
-			print "The median of the numbers is: \n"
+			print "The median of the numbers= "
 			print (numbers[len(numbers)/2] + numbers[len(numbers)/2-1])/2
 		else:
-			print "The median of the numbers is: \n"
+			print "The median of the numbers= "
 			print numbers[(len(numbers)+1)/2-1]
+		print "Mode of the numbers= %f" %(numbers[-1])
 	except ValueError:
 		pass
 
