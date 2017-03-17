@@ -2,6 +2,7 @@ import sys
 from mystats import average
 from myutils import readnumbers
 from std import standardDeviation
+from median import median
 
 fileName = sys.argv[1]
 
@@ -11,6 +12,8 @@ numbers = readnumbers(fileName)
 print "Average = %f for %d numbers in file \"%s\"\n" %(average(numbers), len(numbers), fileName)
 
 print "StandardDev = %f for %d numbers in file \"%s\"" %(standardDeviation(numbers), len(numbers), fileName)
+
+print "Median = %f for %d numbers in file \"%s\"" %(median(numbers), len(numbers), fileName)
 
 
 #KMK see the file I created .gitignore 
