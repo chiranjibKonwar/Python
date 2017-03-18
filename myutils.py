@@ -4,13 +4,21 @@ def readnumbers(filename):
  numbers = []
  try:
     file = open(filename, 'r')     #is 'file' a varible?
-    numbers = file.readlines()
+
+#KMK 1
+#    numbers = file.readlines()
+
+#KMK 2 create an empty array numbers
+    numbers =[] 
+
+#KMK 3
+    for num in file.readlines():
+       numbers.append( float(num.strip()))
+     
+
     file.close()
  except:              # is try except like if-else?
-#KMK this is becuase of some failure and usually unexpected 
     print "Unable to open file %s:"  %(filename)
-#KMK  let's exit this is a serious error
-#KMK observe in line 1 I am importing the sys module
     sys.exit(0)
  return numbers
 
