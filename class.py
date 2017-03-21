@@ -3,9 +3,9 @@ class Parent:
 	var1="parent variable1"
 	var2="parent variable2"
   	def father(self):
-    		print " this is father, mino\n"
+    		return " this is father, mino\n"
   	def mother(self):
-    		print "this is mother, majoni\n"
+    		return "this is mother, majoni\n"
 
 
 class Child(Parent):
