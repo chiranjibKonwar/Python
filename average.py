@@ -1,5 +1,5 @@
 import sys, statistics
-sys.stdout=open('output.txt','w')
+sys.stdout=open('output.txt','a')
 print ("\n =================================\n")
 
 

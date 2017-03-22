@@ -5,3 +5,24 @@ Average = 90.866667 for 15 numbers in file "numbers"
 StandardDev = 18.297695 for 15 numbers in file "numbers"
 Median = 40.000000 for 15 numbers in file "numbers" (computed using statistics module)
 Median = 1000.000000 for 15 numbers in file "numbers" (coputed using mystats module)
+
+ =================================
+
+Average = 90.866667 for 15 numbers in file "numbers"
+StandardDev = 18.297695 for 15 numbers in file "numbers"
+Median = 40.000000 for 15 numbers in file "numbers" (computed using statistics module)
+Median = 1000.000000 for 15 numbers in file "numbers" (coputed using mystats module)
+
+ =================================
+
+Average = 90.866667 for 15 numbers in file "numbers"
+StandardDev = 18.297695 for 15 numbers in file "numbers"
+Median = 40.000000 for 15 numbers in file "numbers" (computed using statistics module)
+Median = 1000.000000 for 15 numbers in file "numbers" (coputed using mystats module)
+
+ =================================
+
+Average = 90.866667 for 15 numbers in file "numbers"
+StandardDev = 18.297695 for 15 numbers in file "numbers"
+Median = 40.000000 for 15 numbers in file "numbers" (computed using statistics module)
+Median = 1000.000000 for 15 numbers in file "numbers" (coputed using mystats module)
