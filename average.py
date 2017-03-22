@@ -1,4 +1,7 @@
 import sys, statistics
+sys.stdout=open('output.txt','w')
+print ("\n =================================\n")
+
 
 #KMK 16 do not do  from statistics import median
 
