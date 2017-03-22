@@ -1,6 +1,11 @@
 import sys, statistics
-sys.stdout=open('output.txt','a')
-print ("\n =================================\n")
+
+
+# KMK 2 remove this 
+
+
+#sys.stdout=open('output.txt','a')
+#print ("\n =================================\n")
 
 
 #do not do  from statistics import median
@@ -51,6 +56,10 @@ def createParser():
     parser.add_option('--median', dest='median', action='store_true', default =False, 
                            help='compute the meidan for  the numbers')
 
+#KMK 1 add an option like --out to provide a output file name
+# and complete the line
+#    parser.add_option('--out', dest='outfile',  default =None, 
+
 
 
 # this is where work begins
@@ -85,6 +94,10 @@ def main(argv):
 # note that I am using the definiton inthe mystats module 
         print "Median = %f for %d numbers in file \"%s\" (coputed using mystats module)" %(median(numbers), len(numbers), options.filename)
 
+
+#KMK 3 follow the following template and 
+outfile=open(options.outfile,'w')
+outfile.write('hello')
 
 
 # observer that this is the file actual code that is being executed, so far it has been only imports and function definiont
