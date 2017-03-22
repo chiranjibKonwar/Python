@@ -9,7 +9,7 @@ import sys
 def average(numbers):
 	sum = 0
 	for number in numbers:
-#KMK  1 the following are unnecessary 
+#the following are unnecessary 
 #       	   value = 0
 #           try:
 #              value = float(numberstring.strip()) # i don't understand this line
