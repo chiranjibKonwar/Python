@@ -17,3 +17,9 @@ print cob.father()
 pob=Parent()
 print pob.var1
 print pob.mother()
+
+#how to class object attribute in python
+
+#how to set an attribute
+
+
