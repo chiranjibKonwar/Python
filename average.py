@@ -48,7 +48,7 @@ def createParser():
 
 #KMK 1 add an option like --out to provide a output file name
 # and complete the line
-#    parser.add_option('--out', dest='outfile',  default =None, 
+	parser.add_option('--out', dest='outfile',  default =None,) 
 
 
 
@@ -91,8 +91,9 @@ def main(argv):
 
 
 #KMK 3 follow the following template and 
-#outfile=open(options.outfile,'w')
-#outfile.write('hello')
+	if options.outfile:
+		outfile=open(options.outfile,'w')
+		outfile.write('hello')
 
 
 # observer that this is the file actual code that is being executed, so far it has been only imports and function definiont
