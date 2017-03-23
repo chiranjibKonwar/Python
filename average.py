@@ -66,34 +66,53 @@ def main(argv):
 
 
 # see were the destination is coming from 
+
+#KMK 6  you can open all files at once in one place
+	fhavg=open("rikuAverage",'a')
+	fhstd=open("rikustd",'a')
+	fhmed=open("rikumedian",'a')
+
+
 	if options.filename:
       		 numbers = readnumbers(options.filename)
 	else:
       	 	print ("ERROR: file " + options.filename + " does not exist!")
 	if options.mean:
-		fh=open("rikuAverage",'a')
-		print ("Average = %f for %d numbers in file \"%s\"" %(average(numbers), len(numbers), options.filename),file=fh)
-		fh.close()
+		#fh=open("rikuAverage",'a')
+#KMK 8  may be just use write instead of print 
+
+#		print ("Average = %f for %d numbers in file \"%s\"" %(average(numbers), len(numbers), options.filename), file = fhavg)
+		fhavg.write("Average = %f for %d numbers in file \"%s\"" %(average(numbers), len(numbers), options.filename))
+		#fh.close()
 
 	if options.std:
-		fh=open("rikustd",'a')
-		print ("StandardDev = %f for %d numbers in file \"%s\"" %(standardDeviation(numbers), len(numbers), options.filename),file=fh)
-		fh.close()
+		#fh=open("rikustd",'a')
+		print ("StandardDev = %f for %d numbers in file \"%s\"" %(standardDeviation(numbers), len(numbers), options.filename), file=fhstd)
+		#fh.close()
 	if options.median:
 # note that I am having to import the statistics module in thid file 
-		fh=open("rikumedian",'a')
-		print ("Median = %f for %d numbers in file \"%s\" (computed using statistics module)" %(statistics.median(numbers), len(numbers), options.filename),file=fh)
-		fh.close()
-# note that I am using the definiton inthe mystats module 
-		fh=open("rikumedian",'a')
-		print ("Median = %f for %d numbers in file \"%s\" (coputed using mystats module)" %(median(numbers), len(numbers), options.filename), file=fh)
-		fh.close()
+		#fh=open("rikumedian",'a')
+		print ("Median = %f for %d numbers in file \"%s\" (computed using statistics module)" %(statistics.median(numbers), len(numbers), options.filename), file=fhmed)
 
+#KMK 4 you don't have to keep closing until you are done writing to this file
+#		fh.close()
+# note that I am using the definiton inthe mystats module 
+
+#KMK 5 remove this open
+#		fh=open("rikumedian",'a')
+		print ("Median = %f for %d numbers in file \"%s\" (coputed using mystats module)" %(median(numbers), len(numbers), options.filename), file=fhmed)
+		#fh.close()
+
+#KMK 7 Close all the above files
+	fhavg.close()
+	fhstd.close()
+	fhmed.close()
+       
 
 #KMK 3 follow the following template and 
-	if options.outfile:
-		outfile=open(options.outfile,'w')
-		outfile.write('hello')
+#	if options.outfile:
+#		outfile=open(options.outfile,'w')
+#		outfile.write('hello')
 
 
 # observer that this is the file actual code that is being executed, so far it has been only imports and function definiont
