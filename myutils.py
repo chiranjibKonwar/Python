@@ -17,7 +17,7 @@ def readnumbers(filename):
 
     file.close()
  except:              # is try except like if-else?
-    print "Unable to open file %s:"  %(filename)
+    print ("Unable to open file %s:"  %(filename))
     sys.exit(0)
  return numbers
 

@@ -1,7 +1,4 @@
 import sys, statistics
-sys.stdout=open('output.txt','a')
-print ("\n =================================\n")
-
 
 #do not do  from statistics import median
 
@@ -26,74 +23,77 @@ usage = sys.argv[0] + """ -file <filename>  [ OPTIONS --std/median/mean ]"""
 
 parser = None
 def createParser():
-    global parser
-    epilog = """This script is used for computing stats for numbers listed in a text file
+	global parser
+	epilog = """This script is used for computing stats for numbers listed in a text file
                 e.g. 1.  python average.py --fiile <name> --std  2.  python average.py --fiile <name> --average --std .... or any other combination"""
-
-    parser = OptionParser(usage=usage, epilog=epilog)
+	parser = OptionParser(usage=usage, epilog=epilog)
 
     # Input options
-
-    parser.add_option('--file', dest='filename', 
+	parser.add_option('--file', dest='filename', 
                            help='the name of the file that has the numbers')
 
 
 #note the dest variable mean, and store_true  and default 
-    parser.add_option('--mean', dest='mean', action='store_true', default =False, 
+	parser.add_option('--mean', dest='mean', action='store_true', default =False, 
                            help='compute the mean for the numbers')
 
 # note the dest variable std, and store_true  and default 
-    parser.add_option('--std', dest='std', action='store_true', default =False, 
+	parser.add_option('--std', dest='std', action='store_true', default =False, 
                            help='compute the standard deviation of the numbers')
 
 
 # note the dest variable std, and store_true  and default 
-    parser.add_option('--median', dest='median', action='store_true', default =False, 
+	parser.add_option('--median', dest='median', action='store_true', default =False, 
                            help='compute the meidan for  the numbers')
 
 
 
 # this is where work begins
 def main(argv):
-    global parser
-
-    options, args = parser.parse_args(argv)
+	global parser
+	options,args = parser.parse_args(argv)
 
 # no need of this any more of explicit array access 
 #    fileName = sys.argv[1]
 
 
 # we need is ouside the if loop to be visible after the if else statment 
-    numbers = [] 
+	numbers = [] 
 
 
 # see were the destination is coming from 
-    if options.filename:
-       numbers = readnumbers(options.filename)
-    else:
-       print "ERROR: file " + options.filename + " does not exist!"
+	if options.filename:
+      		 numbers = readnumbers(options.filename)
+	else:
+      	 	print ("ERROR: file " + options.filename + " does not exist!")
+	if options.mean:
+		fh=open("rikuAverage",'w')
+		print ("Average = %f for %d numbers in file \"%s\"" %(average(numbers), len(numbers), options.filename),file=fh)
+		fh.close()
 
-    if options.mean:
-        print "Average = %f for %d numbers in file \"%s\"" %(average(numbers), len(numbers), options.filename)
-
-    if options.std:
-        print "StandardDev = %f for %d numbers in file \"%s\"" %(standardDeviation(numbers), len(numbers), options.filename)
-
-    if options.median:
+	if options.std:
+		fh=open("rikustd",'w')
+		print ("StandardDev = %f for %d numbers in file \"%s\"" %(standardDeviation(numbers), len(numbers), options.filename),file=fh)
+		fh.close()
+	if options.median:
 # note that I am having to import the statistics module in thid file 
-        print "Median = %f for %d numbers in file \"%s\" (computed using statistics module)" %(statistics.median(numbers), len(numbers), options.filename)
+		fh=open("rikumedian",'w')
+		print ("Median = %f for %d numbers in file \"%s\" (computed using statistics module)" %(statistics.median(numbers), len(numbers), options.filename),file=fh)
+		fh.close()
 # note that I am using the definiton inthe mystats module 
-        print "Median = %f for %d numbers in file \"%s\" (coputed using mystats module)" %(median(numbers), len(numbers), options.filename)
+		fh=open("rikumedian",'w')
+		print ("Median = %f for %d numbers in file \"%s\" (coputed using mystats module)" %(median(numbers), len(numbers), options.filename), file=fh)
+		fh.close()
 
 
 
 # observer that this is the file actual code that is being executed, so far it has been only imports and function definiont
 if __name__ == '__main__':
-     createParser()
+	createParser()
 
 # this is where work begins
 
 # Notice that I did not do sys.argv[0:] because I don't need the script name "average.py"
-     main(sys.argv[1:])   
+	main(sys.argv[1:])   
 
 

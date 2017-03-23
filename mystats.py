@@ -1,7 +1,5 @@
 
 import string
-
-
 import statistics 
 import sys
 
@@ -9,20 +7,13 @@ import sys
 def average(numbers):
 	sum = 0
 	for number in numbers:
-#the following are unnecessary 
-#       	   value = 0
-#           try:
-#              value = float(numberstring.strip()) # i don't understand this line
-#       	   except ValueError:
-#          	pass  
-#          sum = sum + value
-           sum = sum + number
-        averageval=0 
-        if sum!=0:
-          averageval = sum/ len(numbers)
-        else : 
-           averageval = sum
-        return averageval
+		sum = sum + number
+		averageval=0 
+	if sum!=0:
+		averageval = sum/ len(numbers)
+	else: 
+		averageval = sum
+	return averageval
 
 
 def standardDeviation(numbers):
