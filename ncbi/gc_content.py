@@ -1,29 +1,32 @@
 import sys
+from gc_calculation import gc_cal
 
-filename=sys.argv[1]
+from optparse import OptionParser
+usage = sys.argv[0] + """ -file <filename>  [ OPTIONS --std/median/mean ]"""
 
-fh=open(filename,'r')
+parser = None
+def createParser():
+	global parser
+	epilog = """This program calculates the gc_content of a ATGC sequence"""
+	parser = OptionParser(usage=usage, epilog=epilog)
 
-file=fh.read()
-x=file
-c=0
-a=0
-g=0
-t=0
+	parser.add_option('--file', dest='filename', 
+                           help='the name of the fasta file')
 
-for x in file:
-	if "C" in x:
-		c+=1	
-	elif "G" in x:
-		g+=1
-	elif "A" in x:
-		a+=1	
-	elif "T" in x:
-		t+=1
 
-print "C=%d, G=%d, A=%d, T=%d" %(c,g,a,t)
 
-gc_content=(g+c)*100/(a+t+g+c)
+	parser.add_option('--out', dest='outfile',  default =None,) 
 
-print "gc_content= %f" %(gc_content)
+def main(argv):
+	global parser
+	options,args = parser.parse_args(argv)
+	gc_content = []
+	if options.filename:
+      		 gc_content = gc_cal()
+
+if __name__ == '__main__':
+	createParser()
+
+	main(sys.argv[1:])   
+
 
