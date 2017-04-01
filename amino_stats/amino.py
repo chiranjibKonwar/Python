@@ -1,5 +1,5 @@
 import sys
-#from fastareader import FastaReader, FastaRecord
+from fastareader import FastaReader, FastaRecord
 from utilities.fastamodule.fastareader import *
 
 def fprintf(file, fmt, *args):
