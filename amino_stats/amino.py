@@ -30,7 +30,7 @@ if __name__=="__main__":
       sumtotal = 0
       for i in amino_acid:
 	if i in file:
-		print "Percentage of %s is = %.4f" %(i,float(file.count(i))*100/len(file))
+		print "Percentage of %s is = %.4f%%" %(i,float(file.count(i))*100/len(file))
 		percentage = float(file.count(i))*100/len(file)
 		sumtotal = percentage + sumtotal
 	else:
