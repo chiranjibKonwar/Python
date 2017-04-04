@@ -25,7 +25,7 @@ class FastaReader():
         try:
             self.file = open(fasta_filename, 'r')
         except IOError:
-            print "Cannot open fasta file " + fasta_filename
+            print("Cannot open fasta file " + fasta_filename)
 
     def __iter__(self):
         return self
@@ -58,7 +58,7 @@ class FastaReader():
           self.future_name = line.strip()
 
         self.sequence =''.join(fragments)
-        self.seqname = self.name
+        #self.seqname = self.name
         
         return FastaRecord(self.name, self.sequence)
 
