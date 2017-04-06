@@ -1,6 +1,6 @@
 #BLASTn
 
-python sensitivity1.py --algorithm BLAST --blast_executable /home/chiranjib/Downloads/ncbi-blast-2.6.0+/bin/blastn  --blast_out ./outfileSensitivity1 --blast_db ./database --blast_query ./CERZ.fasta
+python sensitivity.py --algorithm BLAST --blast_executable /home/chiranjib/Downloads/ncbi-blast-2.6.0+/bin/blastn  --blast_out ./outfileSensitivity1 --blast_db ./database --blast_query ./CERZ.fasta
 
 
 makeblastdb -in database -parse_seqids -dbtype nucl
