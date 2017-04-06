@@ -4,7 +4,8 @@
 
 try:
    import  sys, re, csv, traceback
-   from os import path, _exit, rename
+   #from os import path, _exit, rename  #-------CKON1--------- commented this line.
+   import os #----------------------------------CKON1--------- imported the whole os module instead.
    import logging.handlers
    from optparse import OptionParser, OptionGroup
    #from libs.python_modules.utils.sysutil import pathDelim
@@ -215,7 +216,8 @@ def  _execute_LAST(options, logger = None):
 
     try:
        result = getstatusoutput(' '.join(args) )
-       rename(options.last_o + ".tmp", options.last_o) 
+# -----CKON2-------commented this line --------------------
+       #rename(options.last_o + ".tmp", options.last_o) 
     except:
        message = "Could not run LASTAL correctly"
        if result and len(result) > 1:
@@ -256,7 +258,8 @@ def  _execute_BLAST(options, logger = None):
 
     try:
        result = getstatusoutput(' '.join(args) )
-       rename(options.blast_out + ".tmp", options.blast_out) 
+# -----CKON2-------commented this line --------------------
+       #rename(options.blast_out + ".tmp", options.blast_out) 
     except:
        return (1, "Cannot execute BLAST successfully")
 
