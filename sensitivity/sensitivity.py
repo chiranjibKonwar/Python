@@ -139,7 +139,7 @@ def createParser():
     last_group.add_option('--last_db', dest='last_db', default=None,
                            help='Target reference database sequenes for LAST')
 
-    last_group.add_option('--last_f', dest='last_f', default='0',
+    last_group.add_option('--last_f', dest='last_f', default='2',
                            help='LAST output format [default 0, tabular]')
 
     last_group.add_option('--last_o', dest='last_o', default=None,
