@@ -1,26 +1,27 @@
 import sys
-basefilename = sys.argv[1]
-fh = open(basefilename, 'r')
-basefile = fh.read()
-fh.close()
+def base():
+	basefilename = sys.argv[1]
+	fh = open(basefilename, 'r')
+	basefile = fh.read()
+	fh.close()
+	return basefile
 
-queryfilename = sys.argv[2]
-fh1 = open(queryfilename, 'r')
-queryfile = fh1.read()
-fh1.close()
-
-x = basefile
-y = queryfile
-x = x.strip()
-y = y.strip()
-print ("The database sequence is: \n %s \n and it's length is: \n %d" %(x,len(x)))
-print ("The query sequence is: \n %s \n and it's length is: \n %d" %(y,len(y)))
-
-import sys
+def query():
+	queryfilename = sys.argv[2]
+	fh1 = open(queryfilename, 'r')
+	queryfile = fh1.read()
+	fh1.close()
+	return queryfile
 
 def score():
+	x = base()
+	y = query()
+	x = x.strip()
+	y = y.strip()
+	print ("The database sequence length is: %d" %len(x))
+	print ("The query sequence length is: %d" %len(y))
 	m=0
-	temp = 0	
+	temp = -999	
 	while m <=len(x)-len(y):
 		score = 0
 		for j in range(len(y)):
@@ -34,10 +35,10 @@ def score():
 		m+=1
 	print "The best score of all possible alignment is = %d" %temp
 			
-score()
 
+if __name__=="__main__":
 
-
+	score()
 
 
 
