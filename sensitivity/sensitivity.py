@@ -4,15 +4,14 @@
 
 try:
    import  sys, re, csv, traceback
-   #from os import path, _exit, rename  #-------CKON1--------- commented this line.
-   import os #----------------------------------CKON1--------- imported the whole os module instead.
+   from os import path, _exit, rename
    import logging.handlers
    from optparse import OptionParser, OptionGroup
-   #from libs.python_modules.utils.sysutil import pathDelim
-   #from libs.python_modules.utils.metapathways_utils  import fprintf, printf, eprintf,  exit_process
-   #from libs.python_modules.utils.sysutil import getstatusoutput
+   from libs.python_modules.utils.sysutil import pathDelim
+   from libs.python_modules.utils.metapathways_utils  import fprintf, printf, eprintf,  exit_process
+   from libs.python_modules.utils.sysutil import getstatusoutput
 
-   #from libs.python_modules.utils.pathwaytoolsutils import *
+   from libs.python_modules.utils.pathwaytoolsutils import *
 
 except:
      print """ Could not load some user defined  module functions"""
@@ -216,8 +215,8 @@ def  _execute_LAST(options, logger = None):
 
     try:
        result = getstatusoutput(' '.join(args) )
-# -----CKON2-------commented this line --------------------
-       #rename(options.last_o + ".tmp", options.last_o) 
+
+       rename(options.last_o + ".tmp", options.last_o) 
     except:
        message = "Could not run LASTAL correctly"
        if result and len(result) > 1:
@@ -258,8 +257,8 @@ def  _execute_BLAST(options, logger = None):
 
     try:
        result = getstatusoutput(' '.join(args) )
-# -----CKON2-------commented this line --------------------
-       #rename(options.blast_out + ".tmp", options.blast_out) 
+
+       rename(options.blast_out + ".tmp", options.blast_out) 
     except:
        return (1, "Cannot execute BLAST successfully")
 

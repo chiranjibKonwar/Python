@@ -18,8 +18,8 @@ class Division(object):
 
 	def division(self):
 
-		self.first()
-		self.second()
+		first(self)
+		second(self)
 
 
 		result="The result of dividing first number by second nubmer is %f" %(self.firstNo / self.secondNo)
