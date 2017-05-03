@@ -12,10 +12,10 @@ def file_dict():
 	file = inputfile()
 	d = {}	
 	for line in file:
-		rows = line.split(' ')
-		for row in rows:
-			d = {row[0]:row[10]}
-			print d
+		rows = line.split('\t')
+		d = {rows[0]:rows[10]}
+		print d
+		
 
 if __name__=="__main__":
 
