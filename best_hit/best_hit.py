@@ -17,8 +17,16 @@ def file_dict():
       
        # if this is the first time the query is encounter or 
        # the new one is even smaller then the one already in 'd' then  keep it
-       d[rows[0]] = []
-       if not rows[0] in d or  d[rows[0]] > float(rows[10]):
+
+       #KMK why is the following line necessary
+       #d[rows[0]] = []
+
+       #KMK if not rows[0] in d or  d[rows[0]] > float(rows[10]):
+       #   d[rows[0]] means a pair "( rows[1], float(rows[10])" 
+       #   d[rows[0]][0] means a pair the first element of the pair, i.e.,  rows[1]" 
+       #   d[rows[0]][1] means a pair the second element of the pair, i.e., float(rows[10])" 
+
+       if not rows[0] in d or  d[rows[0]][1] > float(rows[10]):
            d[rows[0]] = (rows[1], float(rows[10]))
 
     #now print the results out
