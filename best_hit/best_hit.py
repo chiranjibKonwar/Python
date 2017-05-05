@@ -22,10 +22,12 @@ def file_dict():
            d[rows[0]] = (rows[1], float(rows[10]))
 
     #now print the results out
+    outfh = open("best_hits.txt", "w")  
+
     for key, value in d.iteritems():
-	 sys.stdout=open("best_hits.txt","a")
-	 print key, value
-	 sys.stdout.close()
+         print  key + '\t' + value[0] + '\t' + str(value[1]) 
+         outfh.write( key + '\t' + value[0] + '\t' + str(value[1]) + '\n')
+    sys.stdout.close()
 
 if __name__=="__main__":
 
