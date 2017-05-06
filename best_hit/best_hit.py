@@ -14,38 +14,19 @@ def file_dict():
 
     for line in file:
        rows = line.split('\t')
-      
-       # if this is the first time the query is encounter or 
-       # the new one is even smaller then the one already in 'd' then  keep it
-
-       #KMK why is the following line necessary
-       #d[rows[0]] = []
-
-       #KMK if not rows[0] in d or  d[rows[0]] > float(rows[10]):
-       #   d[rows[0]] means a pair "( rows[1], float(rows[10])" 
-       #   d[rows[0]][0] means a pair the first element of the pair, i.e.,  rows[1]" 
-       #   d[rows[0]][1] means a pair the second element of the pair, i.e., float(rows[10])" 
-
-       if not rows[0] in d or  d[rows[0]][1] > float(rows[10]):
-           d[rows[0]] = (rows[1], float(rows[10]))
-
-    #now print the results out
-    outfh = open("best_hits.txt", "w")  
+     
+       if not rows[0] in d or  d[rows[0]][9] > float(rows[10]):
+           d[rows[0]] = (rows[1],rows[2],rows[3],rows[4],rows[5],rows[6],rows[7],rows[8],rows[9], float(rows[10]), rows[11])
 
     for key, value in d.iteritems():
-         print  key + '\t' + value[0] + '\t' + str(value[1]) 
-         outfh.write( key + '\t' + value[0] + '\t' + str(value[1]) + '\n')
-    sys.stdout.close()
+	 sys.stdout=open("best_hits.txt","a")
+	 print key, value[0],value[1],value[2],value[3],value[4],value[5],value[6],value[7],value[8],value[9],value[10]
+	 sys.stdout.close()
 
 if __name__=="__main__":
 
     inputfile()
 
     file_dict()
-
-
-    
-
-
 
 
