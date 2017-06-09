@@ -1,0 +1,14 @@
+Random forests usually work well even on very large datasets, and training can easily
+be parallelized over many CPU cores within a powerful computer. However, random
+forests require more memory and are slower to train and to predict than linear mod‐
+els. If time and memory are important in an application, it might make sense to use a
+linear model instead. Machine learning is about extracting knowledge from data. It is a research field at the
+intersection of statistics, artificial intelligence and computer science, which is also
+known as predictive analytics or statistical learning. The application of machine
+learning methods has in recent years become ubiquitous in everyday life. From auto‐
+matic recommendations of which movies to watch, to what food to order or which
+products to buy, to personalized online radio and recognizing your friends in your
+photos, many modern websites and devices have machine learning algorithms at their
+core. When you look at at complex websites like Facebook, Amazon or Netflix, it is very
+likely that every part of the website you are looking at contains multiple machine
+learning models.
