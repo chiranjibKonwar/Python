@@ -1,5 +1,4 @@
 import sys
-from operator import itemgetter
 filename = sys.argv[1]
 fp = open(filename,'r')
 text = fp.readlines()
@@ -14,10 +13,10 @@ for x in words:
 		count[word] = 1
 	elif word in count:
 		count[word]+=1
-print "="*50
-#print count
+for key,value in count.iteritems():
+	print key,value
 
-print sorted([(key,value) for (key,value) in count.items()])
+#print sorted([(key,value) for (key,value) in count.iteritems()])
 
 
 
